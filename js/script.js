@@ -32,3 +32,24 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Configuração de E-mail Dinâmico
+const companyEmail = "jnrarcondicionado@gmail.com";
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Insere o e-mail como texto
+    document.querySelectorAll(".company-email").forEach(el => {
+        el.textContent = companyEmail;
+    });
+
+    // Define o href para links de e-mail e insere o texto
+    document.querySelectorAll(".company-email-link").forEach(el => {
+        el.href = `mailto:${companyEmail}`;
+        el.textContent = companyEmail;
+    });
+
+    // Adiciona o e-mail como placeholder de inputs
+    document.querySelectorAll(".company-email-placeholder").forEach(el => {
+        el.placeholder = companyEmail;
+    });
+});
