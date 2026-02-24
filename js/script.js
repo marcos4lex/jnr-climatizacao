@@ -36,7 +36,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Configuração de E-mail Dinâmico
 const companyEmail = "jnrarcondicionado@gmail.com";
 
-document.addEventListener("DOMContentLoaded", () => {
+function populateEmail() {
     // Insere o e-mail como texto
     document.querySelectorAll(".company-email").forEach(el => {
         el.textContent = companyEmail;
@@ -52,4 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".company-email-placeholder").forEach(el => {
         el.placeholder = companyEmail;
     });
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", populateEmail);
+} else {
+    populateEmail();
+}
